@@ -4,8 +4,23 @@
 <h3><a href="<util:applicationRoot/>/index.jsp">Home</a></h3>
 <h3>Entities</h3>
 <ul>
+<li><a href="<util:applicationRoot/>/award/award_list.jsp">Awards</a>
+<li><a href="<util:applicationRoot/>/clinical_trial/clinical_trial_list.jsp">Clinical Trials</a>
+<li><a href="<util:applicationRoot/>/collaboration/collaboration_list.jsp">Collaborations</a>
+<li><a href="<util:applicationRoot/>/discipline/discipline_list.jsp">Disciplines</a>
+<li><a href="<util:applicationRoot/>/disease/disease_list.jsp">Diseases</a>
+<li><a href="<util:applicationRoot/>/event/event_list.jsp">Events</a>
+<li><a href="<util:applicationRoot/>/funding_agency/funding_agency_list.jsp">Funding Agencies</a>
+<li><a href="<util:applicationRoot/>/location/location_list.jsp">Locations</a>
+<li><a href="<util:applicationRoot/>/organic_chemical/organic_chemical_list.jsp">Organic Chemicals</a>
+<li><a href="<util:applicationRoot/>/organism/organism_list.jsp">Organisms</a>
+<li><a href="<util:applicationRoot/>/organization/organization_list.jsp">Organizations</a>
 <li><a href="<util:applicationRoot/>/person/person_list.jsp">Persons</a>
+<li><a href="<util:applicationRoot/>/project/project_list.jsp">Projects</a>
+<li><a href="<util:applicationRoot/>/publication_component/publication_component_list.jsp">Publication Components</a>
 <li><a href="<util:applicationRoot/>/resource/resource_list.jsp">Resources</a>
+<li><a href="<util:applicationRoot/>/support/support_list.jsp">Support</a>
+<li><a href="<util:applicationRoot/>/technique/technique_list.jsp">Techniques</a>
 </ul>
 <h3><a href="<util:applicationRoot/>/template/index.jsp">Templates</a></h3>
 <ul>

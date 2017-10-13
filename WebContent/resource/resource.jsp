@@ -14,9 +14,14 @@
    <ack:resource ID="${param.id}">
    <table>
     <tr><th>Resource</th><td><ack:resourceResource/></td></tr>
+    <tr><th>UMLS ID</th><td><ack:resourceUmlsId/></td></tr>
+    <tr><th>UMLS match string</th><td><ack:resourceUmlsMatchString/></td></tr>
+    <tr><th>alternative UMLS ID</th><td><ack:resourceAltUmlsId/></td></tr>
+    <tr><th>alternative UMLS match string</th><td><ack:resourceAltUmlsMatchString/></td></tr>
    </table>
    
-   <h4>Resources Provided</h4>
+   <c:if test="${ack:resourceHasProvider(param.id)}">
+   <h4>Resource Providers</h4>
    <ul>
    <ack:foreachProvider var="prov" usePerson="true" sortCriteria="last_name,first_name">
     <ack:provider>
@@ -25,6 +30,16 @@
         </ack:person>
     </ack:provider>
    </ack:foreachProvider>
+   </ul>
+   </c:if>
+
+   <h4>Mentions</h4>
+   <ul>
+   <ack:foreachResourceMention var="prov" sortCriteria="pmcid">
+    <ack:resourceMention>
+        <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:resourceMentionPmcid/>/"><ack:resourceMentionPmcid/></a>
+    </ack:resourceMention>
+   </ack:foreachResourceMention>
    </ul>
 
    </ack:resource>
