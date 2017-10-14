@@ -22,7 +22,7 @@
    
    <c:if test="${ack:organizationHasInvestigator(param.id)}">
    <h4>Investigators</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachInvestigator var="prov" usePerson="true" sortCriteria="last_name,first_name">
     <ack:investigator>
         <ack:person ID="${ack:investigatorPersonIdValue()}">
@@ -30,12 +30,12 @@
         </ack:person>
     </ack:investigator>
    </ack:foreachInvestigator>
-   </ul>
+   </ol>
    </c:if>
    
    <c:if test="${ack:organizationHasAffiliation(param.id)}">
    <h4>Affiliates</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachAffiliation var="prov" usePerson="true" sortCriteria="last_name,first_name">
     <ack:affiliation>
         <ack:person ID="${ack:affiliationPersonIdValue()}">
@@ -43,12 +43,12 @@
         </ack:person>
     </ack:affiliation>
    </ack:foreachAffiliation>
-   </ul>
+   </ol>
    </c:if>
    
    <c:if test="${ack:organizationHasCollaborant(param.id)}">
    <h4>Collaborations</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachCollaborant var="prov" useCollaboration="true" sortCriteria="collaboration">
     <ack:collaborant>
         <ack:collaboration ID="${ack:collaborantCollaborationIdValue()}">
@@ -56,12 +56,12 @@
         </ack:collaboration>
     </ack:collaborant>
    </ack:foreachCollaborant>
-   </ul>
+   </ol>
    </c:if>
    
    <c:if test="${ack:organizationHasFunder(param.id)}">
    <h4>Awards</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachFunder var="prov" useAward="true" sortCriteria="award">
     <ack:funder>
         <ack:award ID="${ack:funderAwardIdValue()}">
@@ -69,12 +69,12 @@
         </ack:award>
     </ack:funder>
    </ack:foreachFunder>
-   </ul>
+   </ol>
    </c:if>
 
    <c:if test="${ack:organizationHasSupporter(param.id)}">
    <h4>Supports</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachSupporter var="prov" useSupport="true" sortCriteria="support">
     <ack:supporter>
         <ack:support ID="${ack:supporterSupportIdValue()}">
@@ -82,17 +82,17 @@
         </ack:support>
     </ack:supporter>
    </ack:foreachSupporter>
-   </ul>
+   </ol>
    </c:if>
 
    <h4>Mentions</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachOrganizationMention var="prov" sortCriteria="pmcid">
     <ack:organizationMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:organizationMentionPmcid/>/"><ack:organizationMentionPmcid/></a>
     </ack:organizationMention>
    </ack:foreachOrganizationMention>
-   </ul>
+   </ol>
 
    </ack:organization>
 

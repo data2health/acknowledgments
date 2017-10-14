@@ -18,7 +18,7 @@
    
    <c:if test="${ack:supportHasSupporter(param.id)}">
    <h4>Supporters</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachSupporter var="prov" useOrganization="true" sortCriteria="organization">
     <ack:supporter>
         <ack:organization ID="${ack:supporterOrganizationIdValue()}">
@@ -26,17 +26,17 @@
         </ack:organization>
     </ack:supporter>
    </ack:foreachSupporter>
-   </ul>
+   </ol>
    </c:if>
 
    <h4>Mentions</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachSupportMention var="prov" sortCriteria="pmcid">
     <ack:supportMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:supportMentionPmcid/>/"><ack:supportMentionPmcid/></a>
     </ack:supportMention>
    </ack:foreachSupportMention>
-   </ul>
+   </ol>
 
    </ack:support>
 

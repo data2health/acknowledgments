@@ -18,13 +18,13 @@
     <tr><th>UMLS match string</th><td><ack:organicChemicalUmlsMatchString/></td></tr>
    </table>
    <h4>Mentions</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachOrganicChemicalMention var="prov" sortCriteria="pmcid">
     <ack:organicChemicalMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:organicChemicalMentionPmcid/>/"><ack:organicChemicalMentionPmcid/></a>
     </ack:organicChemicalMention>
    </ack:foreachOrganicChemicalMention>
-   </ul>
+   </ol>
 
    </ack:organicChemical>
 

@@ -16,13 +16,13 @@
     <tr><th>Event</th><td><ack:eventEvent/></td></tr>
    </table>
    <h4>Mentions</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachEventMention var="prov" sortCriteria="pmcid">
     <ack:eventMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:eventMentionPmcid/>/"><ack:eventMentionPmcid/></a>
     </ack:eventMention>
    </ack:foreachEventMention>
-   </ul>
+   </ol>
 
    </ack:event>
 

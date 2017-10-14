@@ -20,7 +20,7 @@
    
    <c:if test="${ack:techniqueHasSkill(param.id)}">
    <h4>Technique Providers</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachSkill var="prov" usePerson="true" sortCriteria="last_name,first_name">
     <ack:skill>
         <ack:person ID="${ack:skillPersonIdValue()}">
@@ -28,17 +28,17 @@
         </ack:person>
     </ack:skill>
    </ack:foreachSkill>
-   </ul>
+   </ol>
    </c:if>
 
    <h4>Mentions</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachTechniqueMention var="prov" sortCriteria="pmcid">
     <ack:techniqueMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:techniqueMentionPmcid/>/"><ack:techniqueMentionPmcid/></a>
     </ack:techniqueMention>
    </ack:foreachTechniqueMention>
-   </ul>
+   </ol>
 
    </ack:technique>
 

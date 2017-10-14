@@ -18,13 +18,13 @@
     <tr><th>GeoNames match string</th><td><ack:locationGeonamesMatchString/></td></tr>
    </table>
    <h4>Mentions</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachLocationMention var="prov" sortCriteria="pmcid">
     <ack:locationMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:locationMentionPmcid/>/"><ack:locationMentionPmcid/></a>
     </ack:locationMention>
    </ack:foreachLocationMention>
-   </ul>
+   </ol>
 
    </ack:location>
 

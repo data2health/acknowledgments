@@ -18,13 +18,13 @@
     <tr><th>UMLS match string</th><td><ack:diseaseUmlsMatchString/></td></tr>
    </table>
    <h4>Mentions</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachDiseaseMention var="prov" sortCriteria="pmcid">
     <ack:diseaseMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:diseaseMentionPmcid/>/"><ack:diseaseMentionPmcid/></a>
     </ack:diseaseMention>
    </ack:foreachDiseaseMention>
-   </ul>
+   </ol>
 
    </ack:disease>
 

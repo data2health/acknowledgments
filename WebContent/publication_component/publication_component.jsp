@@ -16,13 +16,13 @@
     <tr><th>Publication Component</th><td><ack:publicationComponentPublicationComponent/></td></tr>
    </table>
    <h4>Mentions</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachPublicationComponentMention var="prov" sortCriteria="pmcid">
     <ack:publicationComponentMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:publicationComponentMentionPmcid/>/"><ack:publicationComponentMentionPmcid/></a>
     </ack:publicationComponentMention>
    </ack:foreachPublicationComponentMention>
-   </ul>
+   </ol>
 
    </ack:publicationComponent>
 

@@ -22,7 +22,7 @@
    
    <c:if test="${ack:personHasInvestigator(param.id)}">
    <h4>Investigator For</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachInvestigator var="prov" useOrganization="true" sortCriteria="organization">
     <ack:investigator>
         <ack:organization ID="${ack:investigatorOrganizationIdValue()}">
@@ -30,12 +30,12 @@
         </ack:organization>
     </ack:investigator>
    </ack:foreachInvestigator>
-   </ul>
+   </ol>
     </c:if>
    
    <c:if test="${ack:personHasAffiliation(param.id)}">
    <h4>Affiliations</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachAffiliation var="prov" useOrganization="true" sortCriteria="organization">
     <ack:affiliation>
         <ack:organization ID="${ack:affiliationOrganizationIdValue()}">
@@ -43,12 +43,12 @@
         </ack:organization>
     </ack:affiliation>
    </ack:foreachAffiliation>
-   </ul>
+   </ol>
     </c:if>
    
    <c:if test="${ack:personHasProvider(param.id)}">
    <h4>Resources Provided</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachProvider var="prov" useResource="true" sortCriteria="resource">
     <ack:provider>
         <ack:resource ID="${ack:providerResourceIdValue()}">
@@ -56,12 +56,12 @@
         </ack:resource>
     </ack:provider>
    </ack:foreachProvider>
-   </ul>
+   </ol>
     </c:if>
    
    <c:if test="${ack:personHasSkill(param.id)}">
    <h4>Technique Provided</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachSkill var="prov" useTechnique="true" sortCriteria="technique">
     <ack:skill>
         <ack:technique ID="${ack:skillTechniqueIdValue()}">
@@ -69,17 +69,17 @@
         </ack:technique>
     </ack:skill>
    </ack:foreachSkill>
-   </ul>
+   </ol>
    </c:if>
 
    <h4>Mentions</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachPersonMention var="prov" sortCriteria="pmcid">
     <ack:personMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:personMentionPmcid/>/"><ack:personMentionPmcid/></a>
     </ack:personMention>
    </ack:foreachPersonMention>
-   </ul>
+   </ol>
 
    </ack:person>
 

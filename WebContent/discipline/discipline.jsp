@@ -16,13 +16,13 @@
     <tr><th>Discipline</th><td><ack:disciplineDiscipline/></td></tr>
    </table>
    <h4>Mentions</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachDisciplineMention var="prov" sortCriteria="pmcid">
     <ack:disciplineMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:disciplineMentionPmcid/>/"><ack:disciplineMentionPmcid/></a>
     </ack:disciplineMention>
    </ack:foreachDisciplineMention>
-   </ul>
+   </ol>
 
    </ack:discipline>
 

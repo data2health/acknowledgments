@@ -18,7 +18,7 @@
    
    <c:if test="${ack:awardHasAwardee(param.id)}">
    <h4>Awardees</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachAwardee var="prov" usePerson="true" sortCriteria="last_name,first_name">
     <ack:awardee>
         <ack:person ID="${ack:awardeePersonIdValue()}">
@@ -26,12 +26,12 @@
         </ack:person>
     </ack:awardee>
    </ack:foreachAwardee>
-   </ul>
+   </ol>
    </c:if>
 
    <c:if test="${ack:awardHasFunder(param.id)}">
    <h4>Funder</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachFunder var="prov" useOrganization="true" sortCriteria="organization">
     <ack:funder>
         <ack:organization ID="${ack:funderOrganizationIdValue()}">
@@ -39,17 +39,17 @@
         </ack:organization>
     </ack:funder>
    </ack:foreachFunder>
-   </ul>
+   </ol>
    </c:if>
    
    <h4>Mentions</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachAwardMention var="prov" sortCriteria="pmcid">
     <ack:awardMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:awardMentionPmcid/>/"><ack:awardMentionPmcid/></a>
     </ack:awardMention>
    </ack:foreachAwardMention>
-   </ul>
+   </ol>
 
    </ack:award>
 

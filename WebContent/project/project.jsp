@@ -16,13 +16,13 @@
     <tr><th>Project</th><td><ack:projectProject/></td></tr>
    </table>
    <h4>Mentions</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachProjectMention var="prov" sortCriteria="pmcid">
     <ack:projectMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:projectMentionPmcid/>/"><ack:projectMentionPmcid/></a>
     </ack:projectMention>
    </ack:foreachProjectMention>
-   </ul>
+   </ol>
 
    </ack:project>
 

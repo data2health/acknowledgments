@@ -18,7 +18,7 @@
    
    <c:if test="${ack:collaborationHasCollaborator(param.id)}">
    <h4>Collaborators</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachCollaborator var="prov" usePerson="true" sortCriteria="last_name,first_name">
     <ack:collaborator>
         <ack:person ID="${ack:collaboratorPersonIdValue()}">
@@ -26,12 +26,12 @@
         </ack:person>
     </ack:collaborator>
    </ack:foreachCollaborator>
-   </ul>
+   </ol>
    </c:if>
 
    <c:if test="${ack:collaborationHasCollaborant(param.id)}">
    <h4>Collaborants</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachCollaborant var="prov" useCollaboration="true" sortCriteria="collaboration">
     <ack:collaborant>
         <ack:organization ID="${ack:collaborantOrganizationIdValue()}">
@@ -39,17 +39,17 @@
         </ack:organization>
     </ack:collaborant>
    </ack:foreachCollaborant>
-   </ul>
+   </ol>
    </c:if>
    
    <h4>Mentions</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachCollaborationMention var="prov" sortCriteria="pmcid">
     <ack:collaborationMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:collaborationMentionPmcid/>/"><ack:collaborationMentionPmcid/></a>
     </ack:collaborationMention>
    </ack:foreachCollaborationMention>
-   </ul>
+   </ol>
 
    </ack:collaboration>
 

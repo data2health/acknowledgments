@@ -16,13 +16,13 @@
     <tr><th>Funding Agency</th><td><ack:fundingAgencyFundingAgency/></td></tr>
    </table>
    <h4>Mentions</h4>
-   <ul>
+   <ol class="bulletedList">
    <ack:foreachFundingAgencyMention var="prov" sortCriteria="pmcid">
     <ack:fundingAgencyMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:fundingAgencyMentionPmcid/>/"><ack:fundingAgencyMentionPmcid/></a>
     </ack:fundingAgencyMention>
    </ack:foreachFundingAgencyMention>
-   </ul>
+   </ol>
 
    </ack:fundingAgency>
 
