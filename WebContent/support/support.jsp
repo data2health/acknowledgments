@@ -34,6 +34,7 @@
    <ack:foreachSupportMention var="prov" sortCriteria="pmcid">
     <ack:supportMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:supportMentionPmcid/>/"><ack:supportMentionPmcid/></a>
+                    [<a href="<util:applicationRoot/>/acknowledgement/acknowledgement.jsp?pmcid=<ack:supportMentionPmcid/>">ack</a>]
     </ack:supportMention>
    </ack:foreachSupportMention>
    </ol>

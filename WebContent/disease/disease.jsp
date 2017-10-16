@@ -22,6 +22,7 @@
    <ack:foreachDiseaseMention var="prov" sortCriteria="pmcid">
     <ack:diseaseMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:diseaseMentionPmcid/>/"><ack:diseaseMentionPmcid/></a>
+                    [<a href="<util:applicationRoot/>/acknowledgement/acknowledgement.jsp?pmcid=<ack:diseaseMentionPmcid/>">ack</a>]
     </ack:diseaseMention>
    </ack:foreachDiseaseMention>
    </ol>

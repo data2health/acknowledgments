@@ -47,6 +47,7 @@
    <ack:foreachCollaborationMention var="prov" sortCriteria="pmcid">
     <ack:collaborationMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:collaborationMentionPmcid/>/"><ack:collaborationMentionPmcid/></a>
+                    [<a href="<util:applicationRoot/>/acknowledgement/acknowledgement.jsp?pmcid=<ack:collaborationMentionPmcid/>">ack</a>]
     </ack:collaborationMention>
    </ack:foreachCollaborationMention>
    </ol>

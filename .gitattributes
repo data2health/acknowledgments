@@ -11,6 +11,9 @@
 .settings/org.eclipse.wst.validation.prefs -text
 WebContent/META-INF/MANIFEST.MF -text
 WebContent/WEB-INF/web.xml -text
+WebContent/acknowledgement/acknowledgement.jsp -text
+WebContent/analytics/ack_by_distinct_entity.jsp -text
+WebContent/analytics/ack_by_total_entity.jsp -text
 WebContent/award/award.jsp -text
 WebContent/award/award_list.jsp -text
 WebContent/clinical_trial/clinical_trial_list.jsp -text
@@ -47,6 +50,7 @@ WebContent/publication_component/publication_component_list.jsp -text
 WebContent/resource/resource.jsp -text
 WebContent/resource/resource_list.jsp -text
 WebContent/resources/style.css -text
+WebContent/sandbox/tree.jsp -text
 WebContent/support/support.jsp -text
 WebContent/support/support_list.jsp -text
 WebContent/technique/technique.jsp -text

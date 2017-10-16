@@ -19,32 +19,60 @@
 			<h3>Fragment: ${param.fragment }</h3>
 			
             <div id=mode style=" float:left; width:100%">
-			<a href="suppress.jsp?fragment=${param.fragment}">suppress</a>
+			<a href="suppress.jsp?fragment=${param.fragment}">suppress</a> |
+			tgrep: <input type="text" id="tgrep" name="tgrep" size="100" value="">
 			</div>
 			
-			<div id=mode style=" float:left; width:150px">
+			<div id=mode style=" float:left; width:100px">
 			<h4>Mode</h4>
-			<input id="checkBox" type="checkbox">Instantiate<br>
-			<input id="checkBox" type="checkbox">Promote<br>
-			<input id="checkBox" type="checkbox">Store
+               <sql:query var="modes" dataSource="jdbc/AcknowledgementsTagLib">
+                    select mode,count(*)
+                    from pubmed_central_ack_stanford.template
+                    group by 1
+                    order by 2 desc;
+                </sql:query>
+                <c:forEach items="${modes.rows}" var="row" varStatus="rowCounter">
+                    <input id="checkBox" type="checkbox">${row.mode}<br>
+                </c:forEach>
 			</div>
-            <div id=relation style=" float:left; width:150px">
+            <div id=relation style=" float:left; width:200px">
             <h4>Relation</h4>
-            <input id="checkBox" type="checkbox">Person<br>
-            <input id="checkBox" type="checkbox">Organization<br>
-            <input id="checkBox" type="checkbox">Award
-            </div>
-            <div id=slot0 style=" float:left; width:150px">
+               <sql:query var="modes" dataSource="jdbc/AcknowledgementsTagLib">
+                    select relation,count(*)
+                    from pubmed_central_ack_stanford.template
+                    where relation is not null
+                    group by 1
+                    order by 2 desc;
+                </sql:query>
+                <c:forEach items="${modes.rows}" var="row" varStatus="rowCounter">
+                    <input id="checkBox" type="checkbox">${row.relation}<br>
+                </c:forEach>
+             </div>
+            <div id=slot0 style=" float:left; width:200px">
             <h4>Slot 0</h4>
-            <input id="checkBox" type="checkbox">person_id<br>
-            <input id="checkBox" type="checkbox">organization_id<br>
-            <input id="checkBox" type="checkbox">award_id
+                <sql:query var="modes" dataSource="jdbc/AcknowledgementsTagLib">
+                    select slot0,count(*)
+                    from pubmed_central_ack_stanford.template
+                    where slot0 is not null and slot0 != '1'
+                    group by 1
+                    order by 2 desc;
+                </sql:query>
+                <c:forEach items="${modes.rows}" var="row" varStatus="rowCounter">
+                    <input id="checkBox" type="checkbox">${row.slot0}<br>
+                </c:forEach>
             </div>
-            <div id=slot1 style=" float:left; width:150px">
+            <div id=slot1 style=" float:left; width:200px">
             <h4>Slot 1</h4>
-            <input id="checkBox" type="checkbox">person_id<br>
-            <input id="checkBox" type="checkbox">organization_id<br>
-            <input id="checkBox" type="checkbox">award_id
+                 <sql:query var="modes" dataSource="jdbc/AcknowledgementsTagLib">
+                    select slot1,count(*)
+                    from pubmed_central_ack_stanford.template
+                    where slot1 is not null
+                    group by 1
+                    order by 2 desc;
+                </sql:query>
+                <c:forEach items="${modes.rows}" var="row" varStatus="rowCounter">
+                    <input id="checkBox" type="checkbox">${row.slot1}<br>
+                </c:forEach>
             </div>
             <div id=samples style=" float:left; width:100%">
             <h4>Highest Frequency Text Fragments</h4>

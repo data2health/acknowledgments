@@ -36,6 +36,7 @@
    <ack:foreachTechniqueMention var="prov" sortCriteria="pmcid">
     <ack:techniqueMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:techniqueMentionPmcid/>/"><ack:techniqueMentionPmcid/></a>
+                    [<a href="<util:applicationRoot/>/acknowledgement/acknowledgement.jsp?pmcid=<ack:techniqueMentionPmcid/>">ack</a>]
     </ack:techniqueMention>
    </ack:foreachTechniqueMention>
    </ol>

@@ -90,6 +90,7 @@
    <ack:foreachOrganizationMention var="prov" sortCriteria="pmcid">
     <ack:organizationMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:organizationMentionPmcid/>/"><ack:organizationMentionPmcid/></a>
+                    [<a href="<util:applicationRoot/>/acknowledgement/acknowledgement.jsp?pmcid=<ack:organizationMentionPmcid/>">ack</a>]
     </ack:organizationMention>
    </ack:foreachOrganizationMention>
    </ol>

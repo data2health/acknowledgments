@@ -22,6 +22,7 @@
    <ack:foreachOrganismMention var="prov" sortCriteria="pmcid">
     <ack:organismMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:organismMentionPmcid/>/"><ack:organismMentionPmcid/></a>
+                    [<a href="<util:applicationRoot/>/acknowledgement/acknowledgement.jsp?pmcid=<ack:organismMentionPmcid/>">ack</a>]
     </ack:organismMention>
    </ack:foreachOrganismMention>
    </ol>

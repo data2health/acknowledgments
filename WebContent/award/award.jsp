@@ -47,6 +47,7 @@
    <ack:foreachAwardMention var="prov" sortCriteria="pmcid">
     <ack:awardMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:awardMentionPmcid/>/"><ack:awardMentionPmcid/></a>
+                    [<a href="<util:applicationRoot/>/acknowledgement/acknowledgement.jsp?pmcid=<ack:awardMentionPmcid/>">ack</a>]
     </ack:awardMention>
    </ack:foreachAwardMention>
    </ol>

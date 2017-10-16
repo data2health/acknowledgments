@@ -22,6 +22,11 @@
 <li><a href="<util:applicationRoot/>/support/support_list.jsp">Support</a>
 <li><a href="<util:applicationRoot/>/technique/technique_list.jsp">Techniques</a>
 </ul>
+<h3>Analytics</h3>
+<ul>
+<li><a href="<util:applicationRoot/>/analytics/ack_by_total_entity.jsp">PMCID by Total Entities</a>
+<li><a href="<util:applicationRoot/>/analytics/ack_by_distinct_entity.jsp">PMCID by Distinct Entities</a>
+</ul>
 <h3><a href="<util:applicationRoot/>/template/index.jsp">Templates</a></h3>
 <ul>
 <li><a href="<util:applicationRoot/>/template/browse_unbound.jsp">Browse unbound fragments</a>

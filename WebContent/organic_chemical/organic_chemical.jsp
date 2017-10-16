@@ -22,6 +22,7 @@
    <ack:foreachOrganicChemicalMention var="prov" sortCriteria="pmcid">
     <ack:organicChemicalMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:organicChemicalMentionPmcid/>/"><ack:organicChemicalMentionPmcid/></a>
+                    [<a href="<util:applicationRoot/>/acknowledgement/acknowledgement.jsp?pmcid=<ack:organicChemicalMentionPmcid/>">ack</a>]
     </ack:organicChemicalMention>
    </ack:foreachOrganicChemicalMention>
    </ol>

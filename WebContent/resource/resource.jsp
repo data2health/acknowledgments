@@ -38,6 +38,7 @@
    <ack:foreachResourceMention var="prov" sortCriteria="pmcid">
     <ack:resourceMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:resourceMentionPmcid/>/"><ack:resourceMentionPmcid/></a>
+                    [<a href="<util:applicationRoot/>/acknowledgement/acknowledgement.jsp?pmcid=<ack:resourceMentionPmcid/>">ack</a>]
     </ack:resourceMention>
    </ack:foreachResourceMention>
    </ol>

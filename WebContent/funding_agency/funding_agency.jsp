@@ -20,6 +20,7 @@
    <ack:foreachFundingAgencyMention var="prov" sortCriteria="pmcid">
     <ack:fundingAgencyMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:fundingAgencyMentionPmcid/>/"><ack:fundingAgencyMentionPmcid/></a>
+                    [<a href="<util:applicationRoot/>/acknowledgement/acknowledgement.jsp?pmcid=<ack:fundingAgencyMentionPmcid/>">ack</a>]
     </ack:fundingAgencyMention>
    </ack:foreachFundingAgencyMention>
    </ol>

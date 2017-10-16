@@ -20,6 +20,7 @@
    <ack:foreachEventMention var="prov" sortCriteria="pmcid">
     <ack:eventMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:eventMentionPmcid/>/"><ack:eventMentionPmcid/></a>
+                    [<a href="<util:applicationRoot/>/acknowledgement/acknowledgement.jsp?pmcid=<ack:eventMentionPmcid/>">ack</a>]
     </ack:eventMention>
    </ack:foreachEventMention>
    </ol>

@@ -22,6 +22,7 @@
    <ack:foreachLocationMention var="prov" sortCriteria="pmcid">
     <ack:locationMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:locationMentionPmcid/>/"><ack:locationMentionPmcid/></a>
+                    [<a href="<util:applicationRoot/>/acknowledgement/acknowledgement.jsp?pmcid=<ack:locationMentionPmcid/>">ack</a>]
     </ack:locationMention>
    </ack:foreachLocationMention>
    </ol>

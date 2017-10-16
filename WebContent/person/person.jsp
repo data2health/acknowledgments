@@ -77,6 +77,7 @@
    <ack:foreachPersonMention var="prov" sortCriteria="pmcid">
     <ack:personMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:personMentionPmcid/>/"><ack:personMentionPmcid/></a>
+                    [<a href="<util:applicationRoot/>/acknowledgement/acknowledgement.jsp?pmcid=<ack:personMentionPmcid/>">ack</a>]
     </ack:personMention>
    </ack:foreachPersonMention>
    </ol>

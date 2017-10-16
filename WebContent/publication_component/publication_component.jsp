@@ -20,6 +20,7 @@
    <ack:foreachPublicationComponentMention var="prov" sortCriteria="pmcid">
     <ack:publicationComponentMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:publicationComponentMentionPmcid/>/"><ack:publicationComponentMentionPmcid/></a>
+                    [<a href="<util:applicationRoot/>/acknowledgement/acknowledgement.jsp?pmcid=<ack:publicationComponentMentionPmcid/>">ack</a>]
     </ack:publicationComponentMention>
    </ack:foreachPublicationComponentMention>
    </ol>

@@ -20,6 +20,7 @@
    <ack:foreachDisciplineMention var="prov" sortCriteria="pmcid">
     <ack:disciplineMention>
         <li>PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/<ack:disciplineMentionPmcid/>/"><ack:disciplineMentionPmcid/></a>
+                    [<a href="<util:applicationRoot/>/acknowledgement/acknowledgement.jsp?pmcid=<ack:disciplineMentionPmcid/>">ack</a>]
     </ack:disciplineMention>
    </ack:foreachDisciplineMention>
    </ol>
