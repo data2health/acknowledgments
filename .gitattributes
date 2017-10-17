@@ -57,7 +57,9 @@ WebContent/technique/technique.jsp -text
 WebContent/technique/technique_list.jsp -text
 WebContent/template/browse.jsp -text
 WebContent/template/browse_fragment.jsp -text
+WebContent/template/browse_pattern.jsp -text
 WebContent/template/browse_unbound.jsp -text
 WebContent/template/generate.jsp -text
 WebContent/template/suppress.jsp -text
+WebContent/visualization/syntaxTree.jsp -text
 /pom.xml -text

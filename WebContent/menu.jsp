@@ -29,6 +29,7 @@
 </ul>
 <h3><a href="<util:applicationRoot/>/template/index.jsp">Templates</a></h3>
 <ul>
+<li><a href="<util:applicationRoot/>/template/browse_pattern.jsp">Browse by tgrep pattern</a>
 <li><a href="<util:applicationRoot/>/template/browse_unbound.jsp">Browse unbound fragments</a>
 <li><a href="<util:applicationRoot/>/template/browse.jsp">Browse all fragments</a>
 </ul>

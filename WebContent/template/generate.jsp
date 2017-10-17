@@ -18,7 +18,11 @@
 				name="caller" value="research" /></jsp:include><div id="centerCol">
 			<h3>Fragment: ${param.fragment }</h3>
 			
+           <jsp:include page="../visualization/syntaxTree.jsp" flush="true">
+                <jsp:param name="tgrep" value="${param.fragment }" />
+           </jsp:include>
             <div id=mode style=" float:left; width:100%">
+            
 			<a href="suppress.jsp?fragment=${param.fragment}">suppress</a> |
 			tgrep: <input type="text" id="tgrep" name="tgrep" size="100" value="">
 			</div>
@@ -32,10 +36,10 @@
                     order by 2 desc;
                 </sql:query>
                 <c:forEach items="${modes.rows}" var="row" varStatus="rowCounter">
-                    <input id="checkBox" type="checkbox">${row.mode}<br>
+                    <input name=mode type="radio" value="${row.mode}">${row.mode}<br>
                 </c:forEach>
 			</div>
-            <div id=relation style=" float:left; width:200px">
+            <div id=relation style=" float:left; width:150px">
             <h4>Relation</h4>
                <sql:query var="modes" dataSource="jdbc/AcknowledgementsTagLib">
                     select relation,count(*)
@@ -45,10 +49,13 @@
                     order by 2 desc;
                 </sql:query>
                 <c:forEach items="${modes.rows}" var="row" varStatus="rowCounter">
-                    <input id="checkBox" type="checkbox">${row.relation}<br>
+                    <c:if test="${rowCounter.index != 0 && rowCounter.index % 9 == 0}">
+                        </div><div id=relation style=" float:left; width:180px"><h4>Relation, con't.</h4>
+                    </c:if>
+                    <input name=relation type="radio" value="${row.relation}">${row.relation}<br>
                 </c:forEach>
              </div>
-            <div id=slot0 style=" float:left; width:200px">
+            <div id=slot0 style=" float:left; width:150px">
             <h4>Slot 0</h4>
                 <sql:query var="modes" dataSource="jdbc/AcknowledgementsTagLib">
                     select slot0,count(*)
@@ -58,10 +65,10 @@
                     order by 2 desc;
                 </sql:query>
                 <c:forEach items="${modes.rows}" var="row" varStatus="rowCounter">
-                    <input id="checkBox" type="checkbox">${row.slot0}<br>
+                    <input name=slot0 type="radio" value="${row.slot0}">${row.slot0}<br>
                 </c:forEach>
             </div>
-            <div id=slot1 style=" float:left; width:200px">
+            <div id=slot1 style=" float:left; width:150px">
             <h4>Slot 1</h4>
                  <sql:query var="modes" dataSource="jdbc/AcknowledgementsTagLib">
                     select slot1,count(*)
@@ -71,7 +78,7 @@
                     order by 2 desc;
                 </sql:query>
                 <c:forEach items="${modes.rows}" var="row" varStatus="rowCounter">
-                    <input id="checkBox" type="checkbox">${row.slot1}<br>
+                    <input name=slot1 type="radio" value="${row.slot1}">${row.slot1}<br>
                 </c:forEach>
             </div>
             <div id=samples style=" float:left; width:100%">
