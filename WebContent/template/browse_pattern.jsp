@@ -38,8 +38,8 @@
                 <c:forEach items="${fragments.rows}" var="row" varStatus="rowCounter">
                     <tr>
                         <td align=right>${row.frequency}</td>
-                        <td><a href="generate.jsp?fragment=${row.fragment}">${row.fragment}</a></td>
-                        <td><a href="suppress.jsp?fragment=${row.fragment}">suppress</a></td>
+                        <td><a href="generate.jsp?fragment=${row.fragment}&pattern=${param.tgrep}">${row.fragment}</a></td>
+                        <td><a href="suppress.jsp?fragment=${row.fragment}&tgrep=${param.tgrep}">suppress</a></td>
                     </tr>
                 </c:forEach>
             </table>

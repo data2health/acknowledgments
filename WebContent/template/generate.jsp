@@ -23,8 +23,11 @@
            </jsp:include>
             <div id=mode style=" float:left; width:100%">
             
-			<a href="suppress.jsp?fragment=${param.fragment}">suppress</a> |
+            <form method='GET' action='submit.jsp'>
+			<a href="suppress.jsp?fragment=${param.fragment}&tgrep=${param.pattern}">Suppress</a> | <input type=submit name=submitButton value=Submit> |
 			tgrep: <input type="text" id="tgrep" name="tgrep" size="100" value="">
+			<input type="hidden" name="pattern" value="${param.pattern}">
+            <input type="hidden" name="fragment" value="${param.fragment}">
 			</div>
 			
 			<div id=mode style=" float:left; width:100px">
@@ -36,7 +39,7 @@
                     order by 2 desc;
                 </sql:query>
                 <c:forEach items="${modes.rows}" var="row" varStatus="rowCounter">
-                    <input name=mode type="radio" value="${row.mode}">${row.mode}<br>
+                    <input id="mode_${row.mode}" name=mode type="radio" value="${row.mode}">${row.mode}<br>
                 </c:forEach>
 			</div>
             <div id=relation style=" float:left; width:150px">
@@ -52,7 +55,7 @@
                     <c:if test="${rowCounter.index != 0 && rowCounter.index % 9 == 0}">
                         </div><div id=relation style=" float:left; width:180px"><h4>Relation, con't.</h4>
                     </c:if>
-                    <input name=relation type="radio" value="${row.relation}">${row.relation}<br>
+                    <input id="relation_${row.relation}" name=relation type="radio" value="${row.relation}">${row.relation}<br>
                 </c:forEach>
              </div>
             <div id=slot0 style=" float:left; width:150px">
@@ -65,7 +68,7 @@
                     order by 2 desc;
                 </sql:query>
                 <c:forEach items="${modes.rows}" var="row" varStatus="rowCounter">
-                    <input name=slot0 type="radio" value="${row.slot0}">${row.slot0}<br>
+                    <input id="slot0_${row.slot0}" name=slot0 type="radio" value="${row.slot0}">${row.slot0}<br>
                 </c:forEach>
             </div>
             <div id=slot1 style=" float:left; width:150px">
@@ -78,7 +81,7 @@
                     order by 2 desc;
                 </sql:query>
                 <c:forEach items="${modes.rows}" var="row" varStatus="rowCounter">
-                    <input name=slot1 type="radio" value="${row.slot1}">${row.slot1}<br>
+                    <input id="slot1_${row.slot1}" name=slot1 type="radio" value="${row.slot1}">${row.slot1}<br>
                 </c:forEach>
             </div>
             <div id=samples style=" float:left; width:100%">

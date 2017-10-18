@@ -51,6 +51,7 @@ WebContent/resource/resource.jsp -text
 WebContent/resource/resource_list.jsp -text
 WebContent/resources/style.css -text
 WebContent/sandbox/tree.jsp -text
+WebContent/sandbox/tree_edited.jsp -text
 WebContent/support/support.jsp -text
 WebContent/support/support_list.jsp -text
 WebContent/technique/technique.jsp -text
@@ -60,6 +61,7 @@ WebContent/template/browse_fragment.jsp -text
 WebContent/template/browse_pattern.jsp -text
 WebContent/template/browse_unbound.jsp -text
 WebContent/template/generate.jsp -text
+WebContent/template/submit.jsp -text
 WebContent/template/suppress.jsp -text
 WebContent/visualization/syntaxTree.jsp -text
 /pom.xml -text
