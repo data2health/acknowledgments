@@ -27,6 +27,7 @@
                     from pubmed_central_ack_stanford.fragments
                     where fragment~'^\[NP '
                       and fragment not in (select fragment from pubmed_central_ack_stanford.template_suppress)
+                      and fragment not in (select fragment from pubmed_central_ack_stanford.template_defer)
                       and fragment not in (select fragment from pubmed_central_ack_stanford.template)
                     order by 2 desc limit 1000;
                 </sql:query>

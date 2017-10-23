@@ -60,6 +60,7 @@ WebContent/template/browse.jsp -text
 WebContent/template/browse_fragment.jsp -text
 WebContent/template/browse_pattern.jsp -text
 WebContent/template/browse_unbound.jsp -text
+WebContent/template/defer.jsp -text
 WebContent/template/generate.jsp -text
 WebContent/template/submit.jsp -text
 WebContent/template/suppress.jsp -text
