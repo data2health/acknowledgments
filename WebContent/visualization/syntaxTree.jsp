@@ -58,14 +58,25 @@ var treeData = parse_tokens();
 		}
 		return current;
 	}
+	
+	var overall_width = 660;
+	var overall_height = 200;
+	
+	if ("${param.width}") {
+		overall_width = parseInt("${param.width}");
+	}
+	if ("${param.height}") {
+	    overall_height = parseInt("${param.height}");
+	}
 
 	var margin = {
 		top : 40,
 		right : 90,
 		bottom : 50,
 		left : 90
-	}, width = 660 - margin.left - margin.right, height = 200 - margin.top
-			- margin.bottom;
+	};
+	var width = overall_width - margin.left - margin.right
+	var height = overall_height - margin.top - margin.bottom;
 
 	var treemap = d3.tree()
 	               .size([width, height])

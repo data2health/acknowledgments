@@ -37,8 +37,10 @@
               
             <h3>Sentence: ${sentence}</h3>
             
-           <jsp:include page="../visualization/syntaxTree2.jsp" flush="true">
+           <jsp:include page="../visualization/syntaxTree.jsp" flush="true">
                 <jsp:param name="tgrep" value="${parse}" />
+                <jsp:param name="width" value="800" />
+                <jsp:param name="height" value="500" />
            </jsp:include>
             
 			<jsp:include page="/footer.jsp" flush="true" /></div>

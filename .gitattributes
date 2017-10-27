@@ -73,5 +73,4 @@ WebContent/template/generate.jsp -text
 WebContent/template/submit.jsp -text
 WebContent/template/suppress.jsp -text
 WebContent/visualization/syntaxTree.jsp -text
-WebContent/visualization/syntaxTree2.jsp -text
 /pom.xml -text
