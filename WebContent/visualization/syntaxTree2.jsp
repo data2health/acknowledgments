@@ -64,7 +64,7 @@ var treeData = parse_tokens();
 		right : 90,
 		bottom : 50,
 		left : 90
-	}, width = 660 - margin.left - margin.right, height = 200 - margin.top
+	}, width = 800 - margin.left - margin.right, height = 500 - margin.top
 			- margin.bottom;
 
 	var treemap = d3.tree()

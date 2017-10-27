@@ -4,6 +4,8 @@
 <%@ taglib prefix="ack"
 	uri="http://icts.uiowa.edu/AcknowledgementsTagLib"%>
 <%@ taglib prefix="util" uri="http://icts.uiowa.edu/tagUtil"%>
+<%@ taglib prefix="pmc" uri="http://icts.uiowa.edu/pubmedcentral"%>
+<%@ taglib prefix="medline" uri="http://icts.uiowa.edu/medline"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -19,7 +21,26 @@
 		<jsp:include page="/menu.jsp" flush="true"><jsp:param name="caller" value="research" /></jsp:include><div id="centerCol">
 
 			<h1>PMCID: ${param.pmcid}</h1>
-            <h2>Text from Article Acknowledgements</h2>
+			<pmc:file pmcid="${param.pmcid}">
+			 <pmc:foreachContent var="con">
+			     <pmc:content>
+			         <c:set var="pmid"><pmc:contentPmid/></c:set>
+			         <medline:article pmid="${pmid}">
+			             <b><medline:articleTitle/></b>
+			         </medline:article>
+			     </pmc:content>
+			 </pmc:foreachContent>
+             <pmc:fileCitation/>
+			</pmc:file>
+            <pmc:article pmcid="${param.pmcid}">
+            <ol class="bulletedList">
+			 <pmc:foreachAuthor sortCriteria="authid" var="auth">
+			     <pmc:author>
+			         <li><pmc:authorLname/>, <pmc:authorFname/>
+			     </pmc:author>
+			 </pmc:foreachAuthor>
+			 </ol>
+			</pmc:article>
 			<h4>Sentences</h4>
 			<sql:query var="sentences" dataSource="jdbc/AcknowledgementsTagLib">
                 select seqnum,sentnum,sentence from pubmed_central_ack_stanford.ack_sentence where pmcid=?::int order by 1,2;
@@ -35,7 +56,7 @@
 					<tr>
 						<td>${row.seqnum}</td>
 						<td>${row.sentnum}</td>
-						<td>${row.sentence}</td>
+						<td><a href="<util:applicationRoot/>/sentence/sentence.jsp?pmcid=${param.pmcid}&seqnum=${row.seqnum}&sentnum=${row.sentnum}">${row.sentence}</a></td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -123,7 +144,7 @@
 					</tr>
 					<c:forEach items="${awards.rows}" var="row" varStatus="rowCounter">
 						<tr>
-							<td><aa href="<util:applicationRoot/>/award/award.jsp?id=${row.id}">${row.id}</a></td>
+							<td><a href="<util:applicationRoot/>/award/award.jsp?id=${row.id}">${row.id}</a></td>
 							<td>${row.award}</td>
 						</tr>
 					</c:forEach>

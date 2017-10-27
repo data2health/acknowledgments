@@ -14,6 +14,7 @@
    <ack:award ID="${param.id}">
    <table>
     <tr><th>Award</th><td><ack:awardAward/></td></tr>
+    <tr><th>Agency</th><td><ack:awardAgency/></td></tr>
    </table>
    
    <c:if test="${ack:awardHasAwardee(param.id)}">

@@ -5,6 +5,10 @@
 <h3>Entities</h3>
 <ul>
 <li><a href="<util:applicationRoot/>/award/award_list.jsp">Awards</a>
+<ol class="bulletedList">
+    <li><a href="<util:applicationRoot/>/award/award_search.jsp">search</a>
+    <li><a href="<util:applicationRoot/>/award/award_by_frequency.jsp">by frequency</a>
+</ol></li>
 <li><a href="<util:applicationRoot/>/clinical_trial/clinical_trial_list.jsp">Clinical Trials</a>
 <li><a href="<util:applicationRoot/>/collaboration/collaboration_list.jsp">Collaborations</a>
 <li><a href="<util:applicationRoot/>/discipline/discipline_list.jsp">Disciplines</a>
@@ -15,10 +19,20 @@
 <li><a href="<util:applicationRoot/>/organic_chemical/organic_chemical_list.jsp">Organic Chemicals</a>
 <li><a href="<util:applicationRoot/>/organism/organism_list.jsp">Organisms</a>
 <li><a href="<util:applicationRoot/>/organization/organization_list.jsp">Organizations</a>
+<ol class="bulletedList">
+    <li><a href="<util:applicationRoot/>/organization/organization_search.jsp">search</a>
+</ol></li>
 <li><a href="<util:applicationRoot/>/person/person_list.jsp">Persons</a>
+<ol class="bulletedList">
+    <li><a href="<util:applicationRoot/>/person/person_search.jsp">search</a>
+    <li><a href="<util:applicationRoot/>/person/person_by_frequency.jsp">by frequency</a>
+</ol></li>
 <li><a href="<util:applicationRoot/>/project/project_list.jsp">Projects</a>
 <li><a href="<util:applicationRoot/>/publication_component/publication_component_list.jsp">Publication Components</a>
 <li><a href="<util:applicationRoot/>/resource/resource_list.jsp">Resources</a>
+<ol class="bulletedList">
+    <li><a href="<util:applicationRoot/>/resource/resource_search.jsp">search</a>
+</ol></li>
 <li><a href="<util:applicationRoot/>/support/support_list.jsp">Support</a>
 <li><a href="<util:applicationRoot/>/technique/technique_list.jsp">Techniques</a>
 </ul>
