@@ -41,6 +41,7 @@
                         <td align=right>${row.frequency}</td>
                         <td><a href="generate.jsp?fragment=${row.fragment}&pattern=${param.tgrep}">${row.fragment}</a></td>
                         <td><a href="suppress.jsp?fragment=${row.fragment}&tgrep=${param.tgrep}">suppress</a></td>
+                        <td><a href="defer.jsp?fragment=${row.fragment}&tgrep=${param.tgrep}">defer</a></td>
                     </tr>
                 </c:forEach>
             </table>

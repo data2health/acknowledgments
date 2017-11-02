@@ -61,8 +61,8 @@
 			<tspace:server spaceName="PMC" hostName="localhost">
     		      <tspace:write request="refragment" arg1="${param.fragment}"/>
  			</tspace:server>
-			<c:if test="${not empty param.fragment}"><a href="generate.jsp?fragment=${param.fragment}&tgrep=${param.pattern}">Generate fragment: ${param.fragment}</a></c:if><br>
-            <c:if test="${not empty param.pattern}"><a href="browse_pattern.jsp?tgrep=${param.pattern}">Browse pattern: ${param.pattern}</a></c:if>
+			<c:if test="${not empty param.fragment}"><a href="generate.jsp?fragment=${param.fragment}&pattern=${param.pattern}">Generate fragment: ${param.fragment}</a></c:if><br>
+            <c:if test="${not empty param.pattern}"><a href="browse_pattern.jsp?fragment=${param.fragment}&tgrep=${param.pattern}">Browse pattern: ${param.pattern}</a></c:if>
 			<jsp:include page="/footer.jsp" flush="true" /></div>
 	</div>
 </body>

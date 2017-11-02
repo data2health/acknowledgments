@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%@ taglib prefix="util" uri="http://icts.uiowa.edu/tagUtil"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -21,8 +22,25 @@
            <jsp:include page="../visualization/syntaxTree.jsp" flush="true">
                 <jsp:param name="tgrep" value="${param.fragment }" />
            </jsp:include>
+             <div id=others style=" float:right; width:40%">
+               <sql:query var="templates" dataSource="jdbc/AcknowledgementsTagLib">
+                    select mode,tgrep,relation,slot0,slot1
+                    from pubmed_central_ack_stanford.template
+                    where fragment = ?
+                    order by 1,2,3;
+                    <sql:param value="${param.fragment}"/>
+                </sql:query>
+                <c:if test="${templates.rowCount > 0}">
+                <table>
+                    <tr><th>mode</th><th>tgrep</th><th>relation</th><th>slot0</th><th>slot1</th></tr>
+                <c:forEach items="${templates.rows}" var="row" varStatus="rowCounter">
+                    <tr><td>${row.mode}</td><td>${row.tgrep}</td><td>${row.relation}</td><td>${row.slot0}</td><td>${row.slot1}</td></tr>
+                </c:forEach>
+                </table>
+                </c:if>
+            </div>
             <div id=mode style=" float:left; width:100%">
-            
+             
             <form method='GET' action='submit.jsp'>
 			<a href="suppress.jsp?fragment=${param.fragment}&tgrep=${param.pattern}">Suppress</a> | <a href="defer.jsp?fragment=${param.fragment}&tgrep=${param.pattern}">Defer</a> | <input type=submit name=submitButton value=Submit> |
 			tgrep: <input type="text" id="tgrep" name="tgrep" size="100" value="">
@@ -39,7 +57,7 @@
                     order by 2 desc;
                 </sql:query>
                 <c:forEach items="${modes.rows}" var="row" varStatus="rowCounter">
-                    <input id="mode_${row.mode}" name=mode type="radio" value="${row.mode}">${row.mode}<br>
+                    <input id="mode_${row.mode}" name=mode type="radio" value="${row.mode}" <c:if test="${row.mode == 'instantiate' || row.mode == 'promote'}">onclick="reset_relation();reset_slot0();reset_slot1();"</c:if> >${row.mode}<br>
                 </c:forEach>
 			</div>
             <div id=relation style=" float:left; width:150px">
@@ -106,7 +124,87 @@
                     </tr>
                 </c:forEach>
             </table>
-            </div>
+
+			<c:choose>
+				<c:when	test="${fn:indexOf(fn:substringAfter(param.fragment, '['),'[') < 0 && fn:endsWith(param.fragment, 'Organization ]')}">
+					<script type="text/javascript">
+						document.getElementById("mode_instantiate").checked = true;
+						document.getElementById("relation_organization").checked = true;
+						autoset = false;
+					</script>
+				</c:when>
+                <c:when test="${fn:indexOf(fn:substringAfter(param.fragment, '['),'[') < 0 && fn:endsWith(param.fragment, 'Person ]')}">
+                    <script type="text/javascript">
+                        document.getElementById("mode_instantiate").checked = true;
+                        document.getElementById("relation_person").checked = true;
+                        autoset = false;
+                    </script>
+                </c:when>
+                <c:when test="${fn:indexOf(fn:substringAfter(param.fragment, '['),'[') < 0 && fn:endsWith(param.fragment, 'Grant ]')}">
+                    <script type="text/javascript">
+                        document.getElementById("mode_instantiate").checked = true;
+                        document.getElementById("relation_award").checked = true;
+                        autoset = false;
+                    </script>
+                </c:when>
+                <c:when test="${fn:indexOf(fn:substringAfter(param.fragment, '['),'[') < 0 && fn:endsWith(param.fragment, 'Resource ]')}">
+                    <script type="text/javascript">
+                        document.getElementById("mode_instantiate").checked = true;
+                        document.getElementById("relation_resource").checked = true;
+                        autoset = false;
+                    </script>
+                </c:when>
+                <c:when test="${fn:indexOf(fn:substringAfter(param.fragment, '['),'[') < 0 && fn:endsWith(param.fragment, 'Discipline ]')}">
+                    <script type="text/javascript">
+                        document.getElementById("mode_instantiate").checked = true;
+                        document.getElementById("relation_discipline").checked = true;
+                        autoset = false;
+                    </script>
+                </c:when>
+                <c:when test="${fn:indexOf(fn:substringAfter(param.fragment, '['),'[') < 0 && fn:endsWith(param.fragment, 'Collaboration ]')}">
+                    <script type="text/javascript">
+                        document.getElementById("mode_instantiate").checked = true;
+                        document.getElementById("relation_collaboration").checked = true;
+                        autoset = false;
+                    </script>
+                </c:when>
+                <c:when test="${fn:indexOf(fn:substringAfter(param.fragment, '['),'[') < 0 && fn:endsWith(param.fragment, 'Event ]')}">
+                    <script type="text/javascript">
+                        document.getElementById("mode_instantiate").checked = true;
+                        document.getElementById("relation_event").checked = true;
+                        autoset = false;
+                    </script>
+                </c:when>
+                <c:when test="${fn:indexOf(fn:substringAfter(param.fragment, '['),'[') < 0 && fn:endsWith(param.fragment, 'Place ]')}">
+                    <script type="text/javascript">
+                        document.getElementById("mode_instantiate").checked = true;
+                        document.getElementById("relation_location").checked = true;
+                        autoset = false;
+                    </script>
+                </c:when>
+                <c:when test="${fn:indexOf(fn:substringAfter(param.fragment, '['),'[') < 0 && fn:endsWith(param.fragment, 'PlaceName ]')}">
+                    <script type="text/javascript">
+                        document.getElementById("mode_instantiate").checked = true;
+                        document.getElementById("relation_location").checked = true;
+                        autoset = false;
+                    </script>
+                </c:when>
+                <c:when test="${fn:indexOf(fn:substringAfter(param.fragment, '['),'[') < 0 && fn:endsWith(param.fragment, 'Support ]')}">
+                    <script type="text/javascript">
+                        document.getElementById("mode_instantiate").checked = true;
+                        document.getElementById("relation_support").checked = true;
+                        autoset = false;
+                    </script>
+                </c:when>
+                <c:when test="${fn:indexOf(fn:substringAfter(param.fragment, '['),'[') < 0 && fn:endsWith(param.fragment, 'Technique ]')}">
+                    <script type="text/javascript">
+                        document.getElementById("mode_instantiate").checked = true;
+                        document.getElementById("relation_technique").checked = true;
+                        autoset = false;
+                    </script>
+                </c:when>
+			</c:choose>
+			</div>
 			<jsp:include page="/footer.jsp" flush="true" /></div>
 	</div>
 </body>

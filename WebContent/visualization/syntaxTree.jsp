@@ -35,6 +35,7 @@ var tokens = "${param.tgrep}".match(/[\[]|[^ \[\]]+|[\]]/g);
 
 var fence = 0;
 var treeData = parse_tokens();
+var autoset = true;
 
 	function parse_tokens() {
 		var current = {};
@@ -171,6 +172,8 @@ var treeData = parse_tokens();
 	}
 	
 	function flag() {
+		if (!autoset)
+			return;
 		if (matches.length == 1) {
 			document.getElementById("mode_promote").checked = true;
 		} else if (matches.length == 2) {
@@ -234,8 +237,14 @@ var treeData = parse_tokens();
             
             if (matches[0].data.name.endsWith(":Grant") && matches[1].data.name.endsWith(":Organization"))
                 document.getElementById("relation_funder").checked = true;
+            
+            if (matches[0].data.name.endsWith(":Grant") && matches[1].data.name.endsWith(":Person"))
+                document.getElementById("relation_awardee").checked = true;
 		} else {
-            document.getElementById("mode_instantiate").checked = true;        	
+            document.getElementById("mode_instantiate").checked = true;
+            document.getElementById("relation_person").checked = true;
+            reset_slot0();
+            reset_slot1();
         }
 	}
 
@@ -248,7 +257,13 @@ var treeData = parse_tokens();
         document.getElementById("mode_instantiate").checked = false;
         document.getElementById("mode_promote").checked = false;
         document.getElementById("mode_store").checked = false;
+        
+        reset_relation();
+        reset_slot0();
+        reset_slot1();
+    }
 
+    function reset_relation() {
         document.getElementById("relation_organization").checked = false;
         document.getElementById("relation_person").checked = false;
         document.getElementById("relation_award").checked = false;
@@ -275,13 +290,17 @@ var treeData = parse_tokens();
         document.getElementById("relation_investigator").checked = false;
         document.getElementById("relation_collaborant").checked = false;
         document.getElementById("relation_program").checked = false;
+    }
 
+    function reset_slot0(){
         document.getElementById("slot0_person_id").checked = false;
         document.getElementById("slot0_organization_id").checked = false;
         document.getElementById("slot0_support_id").checked = false;
         document.getElementById("slot0_award_id").checked = false;
         document.getElementById("slot0_collaboration_id").checked = false;
+	}
 
+    function reset_slot1(){
         document.getElementById("slot1_person_id").checked = false;
         document.getElementById("slot1_organization_id").checked = false;
         document.getElementById("slot1_award_id").checked = false;
