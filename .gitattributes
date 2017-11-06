@@ -72,5 +72,6 @@ WebContent/template/defer.jsp -text
 WebContent/template/generate.jsp -text
 WebContent/template/submit.jsp -text
 WebContent/template/suppress.jsp -text
+WebContent/template/verify.jsp -text
 WebContent/visualization/syntaxTree.jsp -text
 /pom.xml -text

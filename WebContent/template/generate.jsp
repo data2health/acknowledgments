@@ -42,7 +42,8 @@
             <div id=mode style=" float:left; width:100%">
              
             <form method='GET' action='submit.jsp'>
-			<a href="suppress.jsp?fragment=${param.fragment}&tgrep=${param.pattern}">Suppress</a> | <a href="defer.jsp?fragment=${param.fragment}&tgrep=${param.pattern}">Defer</a> | <input type=submit name=submitButton value=Submit> |
+			<a href="suppress.jsp?fragment=${param.fragment}&tgrep=${param.pattern}">Suppress</a> | <a href="defer.jsp?fragment=${param.fragment}&tgrep=${param.pattern}">Defer</a>
+			| <button type="submit" name="action" value="submit">Submit</button> | <button type="submit" name="action" value="return">Submit&Return</button> |
 			tgrep: <input type="text" id="tgrep" name="tgrep" size="100" value="">
 			<input type="hidden" name="pattern" value="${param.pattern}">
             <input type="hidden" name="fragment" value="${param.fragment}">
