@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%@ taglib prefix="util" uri="http://icts.uiowa.edu/tagUtil"%>
+<%@ taglib prefix="tspace" uri="http://slis.uiowa.edu/tspace"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -20,6 +21,11 @@
 				tgrep regular expression: <input type="text" id="tgrep" name="tgrep" size="100" value="${param.tgrep}">
 				</form>
             <h3>Matching Fragments</h3>
+            (Currently queued patterns: 
+<tspace:server spaceName="PMC" hostName="localhost">
+    <tspace:count request="refragment"/>
+</tspace:server>
+            )
             <c:if test="${not empty param.tgrep }">
             <table>
                 <tr>
