@@ -22,9 +22,9 @@
 				</form>
             <h3>Matching Fragments</h3>
             (Currently queued patterns: 
-<tspace:server spaceName="PMC" hostName="localhost">
-    <tspace:count request="refragment"/>
-</tspace:server>
+				<tspace:server spaceName="PMC" hostName="localhost">
+				    <tspace:count request="refragment"/>
+				</tspace:server>
             )
             <c:if test="${not empty param.tgrep }">
             <table>
