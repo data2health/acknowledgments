@@ -150,10 +150,10 @@ var autoset = true;
 	function check(d) {
 		console.log(d.data.name + " " + d.selected + " " + d.tagged);
 		if (d.selected) {
-			tgrep += "(" + d.data.name + ")";
+			tgrep += "(" + d.data.name.replace(/:.*/, "") + ")";
 		}
 		if (d.tagged && !d.selected) {
-			tgrep += d.data.name;
+			tgrep += d.data.name.replace(/:.*/, "");
 		}
 		if (!d.parent) {
 			tgrep += " ^";
