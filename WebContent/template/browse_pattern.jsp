@@ -18,7 +18,8 @@
 		<jsp:include page="/menu.jsp" flush="true"><jsp:param
 				name="caller" value="research" /></jsp:include><div id="centerCol">
 				<form action="browse_pattern.jsp">
-				tgrep regular expression: <input type="text" id="tgrep" name="tgrep" size="100" value="${param.tgrep}">
+				tgrep regular expression: <input type="text" id="tgrep" name="tgrep" size="100" value="${param.tgrep}"><br>
+				<input type="checkbox" name="doAll" <c:if test="${not empty param.doAll}">checked</c:if>> Do all fragments
 				</form>
             <h3>Matching Fragments</h3>
             (Currently queued patterns: 
@@ -38,7 +39,8 @@
                     where fragment~?
                       and fragment not in (select fragment from pubmed_central_ack_stanford.template_suppress)
                       and fragment not in (select fragment from pubmed_central_ack_stanford.template_defer)
-                      and fragment not in (select fragment from pubmed_central_ack_stanford.template)
+                      and fragment not in (select fragment from pubmed_central_ack_stanford.template_complete)
+                      <c:if test="${empty param.doAll}">and fragment not in (select fragment from pubmed_central_ack_stanford.template)</c:if>
                     order by 2 desc limit 1000;
                     <sql:param>${param.tgrep}</sql:param>
                 </sql:query>
