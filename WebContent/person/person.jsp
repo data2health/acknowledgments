@@ -46,6 +46,32 @@
    </ol>
     </c:if>
    
+   <c:if test="${ack:personHasCollaborator(param.id)}">
+   <h4>Collaborator on</h4>
+   <ol class="bulletedList">
+   <ack:foreachCollaborator var="prov" >
+    <ack:collaborator>
+        <ack:collaboration ID="${ack:collaboratorCollaborationIdValue()}">
+            <li><a href="<util:applicationRoot/>/acknowledgement/acknowledgement.jsp?pmcid=<ack:collaboratorPmcid/>"><ack:collaboratorPmcid/></a> (<ack:collaborationCollaboration/>)
+        </ack:collaboration>
+    </ack:collaborator>
+   </ack:foreachCollaborator>
+   </ol>
+    </c:if>
+   
+   <c:if test="${ack:personHasAwardee(param.id)}">
+   <h4>Awardee on</h4>
+   <ol class="bulletedList">
+   <ack:foreachAwardee var="prov" >
+    <ack:awardee>
+        <ack:award ID="${ack:awardeeAwardIdValue()}">
+            <li><a href="<util:applicationRoot/>/award/award.jsp?id=<ack:awardeeAwardId/>"><ack:awardeeAwardId/></a> (<ack:awardeePmcid/>)
+        </ack:award>
+    </ack:awardee>
+   </ack:foreachAwardee>
+   </ol>
+    </c:if>
+   
    <c:if test="${ack:personHasProvider(param.id)}">
    <h4>Resources Provided</h4>
    <ol class="bulletedList">

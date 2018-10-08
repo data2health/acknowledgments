@@ -38,6 +38,7 @@
 </ul>
 <h3>Analytics</h3>
 <ul>
+<li><a href="<util:applicationRoot/>/analytics/person_by_distinct_relationship.jsp">Persons by Number of Distinct Relationship Types</a>
 <li><a href="<util:applicationRoot/>/analytics/ack_by_total_entity.jsp">PMCID by Total Entities</a>
 <li><a href="<util:applicationRoot/>/analytics/ack_by_distinct_entity.jsp">PMCID by Distinct Entities</a>
 </ul>

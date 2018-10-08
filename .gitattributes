@@ -14,6 +14,7 @@ WebContent/WEB-INF/web.xml -text
 WebContent/acknowledgement/acknowledgement.jsp -text
 WebContent/analytics/ack_by_distinct_entity.jsp -text
 WebContent/analytics/ack_by_total_entity.jsp -text
+WebContent/analytics/person_by_distinct_relationship.jsp -text
 WebContent/award/award.jsp -text
 WebContent/award/award_by_frequency.jsp -text
 WebContent/award/award_list.jsp -text
