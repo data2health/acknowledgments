@@ -27,7 +27,7 @@
                     <th>Person</th>
                 </tr>
                 <sql:query var="fragments" dataSource="jdbc/AcknowledgementsTagLib">
-                    select id,first_name,last_name
+                    select id,first_name,middle_name,last_name
                     from pubmed_central_ack_stanford.person
                     where last_name~?
                     order by 2;
@@ -36,7 +36,7 @@
                 <c:forEach items="${fragments.rows}" var="row" varStatus="rowCounter">
                     <tr>
                         <td><a href="person.jsp?id=${row.id}">${row.id}</td>
-                        <td>${row.last_name}, ${row.first_name}</td>
+                        <td>${row.last_name}, ${row.first_name} ${row.middle_name}</td>
                     </tr>
                 </c:forEach>
             </table>
