@@ -31,10 +31,22 @@ WebContent/event/event_list.jsp -text
 WebContent/footer.jsp -text
 WebContent/funding_agency/funding_agency.jsp -text
 WebContent/funding_agency/funding_agency_list.jsp -text
+WebContent/head.jsp -text
 WebContent/header.jsp -text
 WebContent/images/bullet-l1.gif -text
+WebContent/images/cd2h_honeycomb.png -text svneol=unset#image/png
+WebContent/images/cd2h_invent.png -text svneol=unset#image/png
+WebContent/images/ctsa-g-logo.jpg -text svneol=unset#image/jpeg
+WebContent/images/labs-logo.png -text svneol=unset#image/png
+WebContent/images/labslogo2.png -text svneol=unset#image/png
 WebContent/images/leo.png -text
+WebContent/images/masthead-divider.png -text svneol=unset#image/png
+WebContent/images/masthead-hhs-logo.png -text svneol=unset#image/png
+WebContent/images/masthead-nih-logo.png -text svneol=unset#image/png
+WebContent/images/onlinelogomaker-111617-1142-7717.png -text svneol=unset#image/png
+WebContent/images/person_icon.png -text svneol=unset#image/png
 WebContent/index.jsp -text
+WebContent/local_nav.jsp -text
 WebContent/location/location.jsp -text
 WebContent/location/location_list.jsp -text
 WebContent/menu.jsp -text
@@ -56,8 +68,17 @@ WebContent/publication_component/publication_component_list.jsp -text
 WebContent/resource/resource.jsp -text
 WebContent/resource/resource_list.jsp -text
 WebContent/resource/resource_search.jsp -text
+WebContent/resources/cd2h -text
+WebContent/resources/css -text
+WebContent/resources/d3.v3.min.js -text
 WebContent/resources/d3.v4.min.js -text
+WebContent/resources/jdbc_environment.jsp -text
+WebContent/resources/layout(old).css -text
+WebContent/resources/layout.css -text
+WebContent/resources/slick.min.css -text
 WebContent/resources/style.css -text
+WebContent/resources/style_original.css -text
+WebContent/resources/styles.css -text
 WebContent/sandbox/tree.jsp -text
 WebContent/sandbox/tree_edited.jsp -text
 WebContent/sentence/sentence.jsp -text

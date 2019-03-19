@@ -1,24 +1,39 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="ack" uri="http://icts.uiowa.edu/AcknowledgementsTagLib"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%@ taglib prefix="util" uri="http://icts.uiowa.edu/tagUtil"%>
+<%@ taglib prefix="ack"
+	uri="http://icts.uiowa.edu/AcknowledgementsTagLib"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Collaboration List</title>
-<style type="text/css" media="all">    @import "<util:applicationRoot/>/resources/style.css";</style></head>
-<body>
-<div id="content"><jsp:include page="/header.jsp" flush="true" /> <jsp:include page="/menu.jsp" flush="true"><jsp:param name="caller" value="research" /></jsp:include><div id="centerCol">
-<ol class="bulletedList">
-<ack:foreachCollaboration var="X" sortCriteria="collaboration">
-   <ack:collaboration>
-      <li><a href="collaboration.jsp?id=<ack:collaborationID/>"><ack:collaborationCollaboration/></a>
-   </ack:collaboration>
-</ack:foreachCollaboration>
-</ol>
 
-<jsp:include page="/footer.jsp" flush="true" /></div></div></body>
+<!DOCTYPE html>
+<html lang="en-US">
+<jsp:include page="../head.jsp" flush="true">
+	<jsp:param name="title" value="acknowledgements Collaboration List" />
+</jsp:include>
+<style type="text/css" media="all">
+@import "../resources/layout.css";
+</style>
+
+<body class="home page-template-default page page-id-6 CD2H">
+	<jsp:include page="../header.jsp" flush="true" />
+
+	<div class="container pl-0 pr-0">
+		<br /> <br />
+		<div class="container-fluid">
+            <h1>Extracted Collaborations</h1>
+			<ol class="bulletedList">
+				<ack:foreachCollaboration var="X" sortCriteria="collaboration">
+					<ack:collaboration>
+						<li><a href="collaboration.jsp?id=<ack:collaborationID/>"><ack:collaborationCollaboration /></a>
+					</ack:collaboration>
+				</ack:foreachCollaboration>
+			</ol>
+		</div>
+		<jsp:include page="../footer.jsp" flush="true" />
+	</div>
+</body>
+
 </html>
 
