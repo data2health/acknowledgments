@@ -65,9 +65,11 @@ function animateScript() {
 		document.getElementById("labs_image").style.backgroundPosition = "-" + position + "px 0px"; 
 		console.log("-" + position + "px 0px");
 		if (position < 330)
-			{ position = position + diff;}
-		else
-			{ position = 0; }
+			{ position = position + diff;
+		}else{ 
+			position = 330;
+			stopanimate();
+			}
 	}, interval ); 
 } 
 

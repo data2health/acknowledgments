@@ -9,28 +9,32 @@ body, img, h1, h2, h3, h4, h5, h6, ul, li, p, a, form {
 	padding: 0;
 	border: none;
 }
-body {
+body{
     background-color:white;
 	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
-	line-height: 2em;
-	color: #414b56;
-	font-size: 12pt;
-}
-h2 {
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
 	margin: 20px 0;
+	line-height: 1.5em;
+	color: #2e3338;
+	font-size: 1rem;
+}
+
+
+h2 {
 	font-size: 1.75em;
 	font-weight:450; 
 }
 h3 {
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
-	margin: 20px 0;
 	font-size: 1.25em;
 }
-p {
+p{
 	padding: 0 30px 10px 0;
-	font-weight:lighter
+	font-weight:lighter;
 }
+
+.small-space p{
+	line-height: 1.2em;
+}
+
 ul {
 	padding-left: 50px;
 }
@@ -43,7 +47,7 @@ a {
 	color: #317ab2;
 }
 a:hover {
-	background-color: #EAEAEA;
+	background-color: transparent;
 }
 
 .accent{
@@ -202,7 +206,7 @@ ul > li {
 
 .foot-logos a:hover{
 	background:transparent;
-	transform: scale(1.01);
+	transform: scale(1.05);
 }
 
 /************************/
@@ -390,6 +394,20 @@ table a {
 	padding: 1.1rem .8rem;
 }
 
+.accent_card .list-group-item p{
+	padding: 0 23px 10px 0;
+}
+
+.accent_card .external{
+	background-image: url('../images/tile_background_external.png');
+	background-repeat: no-repeat;
+  	background-size: 100% 100%;
+	color:#eff2f7;
+	border-color: white;
+	height: 200px;
+	padding: 1.1rem .8rem;
+}
+
 .accent_card .list-group-item:hover{
 	border:0px;
 	transform: scale(1.01);
@@ -433,6 +451,11 @@ navbar-toggler {
 
 .navbar a:hover{
 	background-color:  #393f4d!important;
+}
+
+.navbar a:focus {
+    background-color: #393f4d!important;
+    color: white!important;
 }
 
 navbar-dark .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
