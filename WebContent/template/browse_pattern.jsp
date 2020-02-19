@@ -23,7 +23,7 @@
 				</form>
             <h3>Matching Fragments</h3>
             (Currently queued patterns: 
-				<tspace:server spaceName="PMC" hostName="localhost">
+				<tspace:server spaceName="PMC" hostName="deep-thought.slis.uiowa.edu">
 				    <tspace:count request="refragment"/>
 				</tspace:server>
             )

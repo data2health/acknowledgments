@@ -58,7 +58,7 @@
                 </sql:update>
             </c:if>
 			</div>
-			<tspace:server spaceName="PMC" hostName="localhost">
+			<tspace:server spaceName="PMC" hostName="deep-thought.slis.uiowa.edu">
     		      <tspace:write request="refragment" arg1="${param.fragment}"/>
  			</tspace:server>
 			<c:if test="${not empty param.fragment}"><a href="generate.jsp?fragment=${param.fragment}&pattern=${param.pattern}">Generate fragment: ${param.fragment}</a></c:if><br>

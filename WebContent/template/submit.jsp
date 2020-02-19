@@ -34,7 +34,7 @@
 </c:if>
 </div>
 
-<tspace:server spaceName="PMC" hostName="localhost">
+<tspace:server spaceName="PMC" hostName="deep-thought.slis.uiowa.edu">
       <tspace:write request="refragment" arg1="${param.fragment}"/>
 </tspace:server>
 
@@ -45,7 +45,7 @@
 	</c:redirect>
 </c:if>
 <c:if test="${param.action == 'submit'}">
-	<c:redirect url="browse_pattern.jsp">
+	<c:redirect url="browse_unbound.jsp">
 		<c:param name="fragment" value="${param.fragment}" />
 		<c:param name="tgrep" value="${param.pattern}" />
 	</c:redirect>
