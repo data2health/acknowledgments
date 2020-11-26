@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+        
     <wb-module deploy-name="acknowledgments-0.0.1-SNAPSHOT">
+                
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+                
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+                
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <dependent-module archiveName="UtilTagLib-1.0.4-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/UtilTagLib/UtilTagLib">
             <dependency-type>uses</dependency-type>
@@ -18,9 +22,6 @@
         <dependent-module archiveName="TSpaceTagLib-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/TSpaceTagLib/TSpaceTagLib">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="PubMedCentralTagLib-0.0.3-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/PubMedCentralTagLib/PubMedCentralTagLib">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <dependent-module archiveName="MEDLINETagLib-0.0.8-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/MEDLINETagLib/MEDLINETagLib">
             <dependency-type>uses</dependency-type>
         </dependent-module>
@@ -30,7 +31,11 @@
         <dependent-module archiveName="GraphTagLib-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/GraphTagLib/GraphTagLib">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+                
         <property name="context-root" value="acknowledgments"/>
+                
         <property name="java-output-path" value="/acknowledgments/build/classes"/>
+            
     </wb-module>
+    
 </project-modules>
